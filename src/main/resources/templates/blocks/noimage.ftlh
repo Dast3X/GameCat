@@ -1,0 +1,2 @@
+<#-- For dislaying the "noimage" if it was not set-->
+<#assign noimage = "this.onerror=null; this.src='https://upload.wikimedia.org/wikipedia/commons/thumb/6/65/No-Image-Placeholder.svg/1665px-No-Image-Placeholder.svg.png';">
