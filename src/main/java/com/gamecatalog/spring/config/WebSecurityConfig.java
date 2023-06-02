@@ -13,6 +13,7 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.SecurityFilterChain;
 
+// This class is used to configure Spring Security and Spring Security Filter Chain 
 @Configuration
 @EnableWebSecurity
 @AllArgsConstructor
@@ -20,11 +21,16 @@ import org.springframework.security.web.SecurityFilterChain;
 public class WebSecurityConfig {
     private final CustomUserDetailsService userDetailsService;
 
+    // configure Spring Security Filter Chain 
     @Bean
     protected SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
+        /*
+            allow access to log in, registration and static files
+            configure login and logout pages and set default success url
+        */
         http
                 .authorizeHttpRequests((requests) -> requests
-                        .requestMatchers("/login", "/static/**", "/registration")
+                        .requestMatchers("/login", "/registration")
                         .permitAll()
                         .anyRequest()
                         .authenticated()
@@ -38,11 +44,12 @@ public class WebSecurityConfig {
         return http.build();
     }
 
-
+    // configure user details service and password encoder  
     protected void configure(AuthenticationManagerBuilder auth) throws Exception {
         auth.userDetailsService(userDetailsService).passwordEncoder(passwordEncoder());
     }
 
+    // configure password encoder 
     @Bean
     public PasswordEncoder passwordEncoder() {
         return new BCryptPasswordEncoder();
