@@ -9,7 +9,7 @@ To run the application, make sure you have Java 17 installed. You can use the 'c
 ## Getting Started
 
 1. Clone the repository to your local machine.
-  ```bash
+  ```cmd
   git clone https://github.com/Dast3X/GameCat
   ```
 3. Open the project in your preferred Java IDE.
@@ -33,6 +33,6 @@ Here are some screenshots of the GameCat application:
 ![image](https://github.com/Dast3X/GameCat/assets/65315002/47049864-2996-4374-9440-bf07f8c92954)
 ![image](https://github.com/Dast3X/GameCat/assets/65315002/fe6958d8-b684-4fa5-9164-ff4bb1fd7190)
 
-Feel free to explore the repository and try out the GameCat application. Enjoy gaming!
+Feel free to explore the repository and try out the GameCat application.
 
 
